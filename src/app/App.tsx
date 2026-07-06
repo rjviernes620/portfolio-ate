@@ -54,17 +54,6 @@ const caseStudies = [
     tags: ["Art Direction", "Campaign", "Photography"],
     accent: "#FF6B35",
   },
-  {
-    title: "Content Engine — TikTok Growth",
-    category: "Content Strategy · Video Production",
-    year: "2024",
-    description:
-      "Designed and executed a TikTok content system that took the brand from 2K to 28K followers in four months — authentic tutorials, behind-the-scenes, and founder-led storytelling.",
-    metric: "2K → 28K followers in 4 months",
-    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=900&h=600&fit=crop&auto=format",
-    tags: ["TikTok", "Video", "Growth"],
-    accent: "#9B2D6F",
-  },
 ];
 
 const projects = [
@@ -478,7 +467,19 @@ function Roles() {
 /* ─── Case Studies ─── */
 function CaseStudies() {
   const [active, setActive] = useState(0);
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
   const study = caseStudies[active];
+
+  useEffect(() => {
+    if (isOverlayOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOverlayOpen]);
 
   return (
     <section id="work" className="py-32 px-6 md:px-12" style={{ background: "#FBF4EF" }}>
@@ -548,6 +549,7 @@ function CaseStudies() {
                 background: study.accent,
                 color: "#fff",
                 fontFamily: "'Jost', sans-serif",
+                fontWeight: 500,
               }}
             >
               {study.metric}
@@ -612,6 +614,7 @@ function CaseStudies() {
             </div>
 
             <button
+              onClick={() => setIsOverlayOpen(true)}
               className="mt-8 self-start flex items-center gap-2 text-sm px-6 py-3 rounded-full transition-all duration-200 hover:opacity-85 hover:scale-[1.02]"
               style={{
                 background: study.accent,
@@ -620,11 +623,184 @@ function CaseStudies() {
                 fontWeight: 500,
               }}
             >
-              View full case study <ArrowUpRight size={13} />
+              View more <ArrowUpRight size={13} />
             </button>
           </div>
         </div>
       </div>
+
+      {/* Large Overlay Case Study Details */}
+      {isOverlayOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 bg-[#180A10]/60 backdrop-blur-sm transition-all duration-300"
+          onClick={() => setIsOverlayOpen(false)}
+        >
+          {/* Modal Card */}
+          <div
+            className="relative w-full max-w-6xl h-full max-h-[85vh] bg-[#FBF4EF] rounded-3xl border border-border flex flex-col md:grid md:grid-cols-12 overflow-hidden shadow-2xl animate-modal-scale-up"
+            style={{
+              borderColor: "rgba(24,10,16,0.08)",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Floating Close Button */}
+            <button
+              onClick={() => setIsOverlayOpen(false)}
+              className="absolute top-4 right-4 z-50 flex items-center justify-center w-10 h-10 rounded-full border bg-[#FBF4EF]/90 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-[#180A10] hover:text-white cursor-pointer"
+              style={{
+                borderColor: "rgba(24,10,16,0.1)",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.04)"
+              }}
+              aria-label="Close Case Study"
+            >
+              <X size={16} />
+            </button>
+
+            {/* Left side: Image (increased version of original) */}
+            <div className="relative md:col-span-5 h-64 md:h-full bg-muted overflow-hidden">
+              <img
+                src={study.image}
+                alt={study.title}
+                className="w-full h-full object-cover"
+              />
+              <div
+                className="absolute inset-0"
+                style={{ background: `linear-gradient(to bottom, transparent 40%, ${study.accent}55 100%)` }}
+              />
+              <div
+                className="absolute bottom-5 left-5 px-4 py-2 rounded-full text-xs font-medium"
+                style={{
+                  background: study.accent,
+                  color: "#fff",
+                  fontFamily: "'Jost', sans-serif",
+                  fontWeight: 500,
+                }}
+              >
+                {study.metric}
+              </div>
+            </div>
+
+            {/* Right side: Content (scrollable on desktop) */}
+            <div className="md:col-span-7 p-6 md:p-12 flex flex-col justify-between overflow-y-auto md:max-h-[85vh]">
+              <div className="flex flex-col gap-8">
+                {/* Header info */}
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center justify-between">
+                    <span
+                      className="text-xs tracking-[0.15em] uppercase font-semibold"
+                      style={{ fontFamily: "'DM Mono', monospace", color: study.accent }}
+                    >
+                      {study.year}
+                    </span>
+                    <span
+                      className="text-xs opacity-50"
+                      style={{ fontFamily: "'DM Mono', monospace" }}
+                    >
+                      {study.category}
+                    </span>
+                  </div>
+
+                  <h2
+                    className="leading-tight"
+                    style={{
+                      fontFamily: "'Gilda Display', serif",
+                      fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)",
+                      color: "#180A10",
+                    }}
+                  >
+                    {study.title}
+                  </h2>
+
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    {study.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[11px] px-2.5 py-1 rounded-full border"
+                        style={{
+                          borderColor: `${study.accent}33`,
+                          color: study.accent,
+                          fontFamily: "'Jost', sans-serif",
+                        }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <hr style={{ borderColor: "rgba(24,10,16,0.06)" }} />
+
+                {/* Meta details table */}
+                <div className="grid grid-cols-2 gap-4 text-xs">
+                  <div>
+                    <span className="opacity-45 block mb-0.5 font-semibold" style={{ fontFamily: "'DM Mono', monospace" }}>Client</span>
+                    <span className="text-sm font-medium">{study.title.split(' — ')[0]}</span>
+                  </div>
+                  <div>
+                    <span className="opacity-45 block mb-0.5 font-semibold" style={{ fontFamily: "'DM Mono', monospace" }}>Role</span>
+                    <span className="text-sm font-medium">Lead Designer</span>
+                  </div>
+                </div>
+
+                <hr style={{ borderColor: "rgba(24,10,16,0.06)" }} />
+
+                {/* Content sections */}
+                <div className="flex flex-col gap-6">
+                  <div className="flex flex-col gap-2">
+                    <h3
+                      className="text-xs tracking-[0.12em] uppercase font-semibold"
+                      style={{ fontFamily: "'DM Mono', monospace", color: study.accent }}
+                    >
+                      01 / The Challenge
+                    </h3>
+                    <p className="text-sm leading-relaxed opacity-85 font-light" style={{ color: "rgba(24,10,16,0.8)" }}>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                    <h3
+                      className="text-xs tracking-[0.12em] uppercase font-semibold"
+                      style={{ fontFamily: "'DM Mono', monospace", color: study.accent }}
+                    >
+                      02 / The Strategy
+                    </h3>
+                    <p className="text-sm leading-relaxed opacity-85 font-light" style={{ color: "rgba(24,10,16,0.8)" }}>
+                      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Mollis pretium lorem primis cubilia nisl. Feugiat donec tristique rhoncus curae sem. Tellus platea integer taciti potenti sit sodales.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                    <h3
+                      className="text-xs tracking-[0.12em] uppercase font-semibold"
+                      style={{ fontFamily: "'DM Mono', monospace", color: study.accent }}
+                    >
+                      03 / The Outcome
+                    </h3>
+                    <p className="text-sm leading-relaxed opacity-85 font-light" style={{ color: "rgba(24,10,16,0.8)" }}>
+                      Dictumst nam congue ac pretium sollicitudin taciti cubilia magna. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Authentic tutorials, behind-the-scenes storytelling, and community-driven content.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom footer button */}
+              <div className="mt-8 pt-6 border-t flex justify-center md:justify-start" style={{ borderColor: "rgba(24,10,16,0.06)" }}>
+                <button
+                  onClick={() => setIsOverlayOpen(false)}
+                  className="px-6 py-2.5 rounded-full text-sm font-medium text-white transition-all duration-300 hover:scale-[1.02] hover:opacity-90 shadow-md cursor-pointer"
+                  style={{
+                    background: "#180A10",
+                    fontFamily: "'Jost', sans-serif",
+                  }}
+                >
+                  Close Case Study
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
