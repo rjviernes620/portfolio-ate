@@ -174,3 +174,62 @@
     line-height: 1.5;
   }
 }
+
+/* ─── Splash Screen Animations ─── */
+.splash-letter {
+  opacity: 0;
+  display: inline-block;
+  animation: fade-in-letter 0.9s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+}
+
+.splash-line {
+  width: 140px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #D4175A 20%, #D4175A 80%, transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  animation: draw-line 1.2s cubic-bezier(0.85, 0, 0.15, 1) 0.6s forwards;
+}
+
+@keyframes fade-in-letter {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.9);
+    filter: blur(10px);
+  }
+  60% {
+    opacity: 0.8;
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes draw-line {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.splash-container {
+  background-color: #180A10;
+  color: #FBF4EF;
+  font-family: 'Gilda Display', serif;
+  transition: transform 0.95s cubic-bezier(0.85, 0, 0.15, 1), opacity 0.8s ease-out;
+}
+
+.splash-container.exit {
+  transform: translateY(-100%);
+}
+
+.splash-container.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { ArrowUpRight, Mail, Instagram, Linkedin, ExternalLink, ChevronDown, Menu, X } from "lucide-react";
 import defaultPhoto from "../../assets/images/WhatsApp Image 2026-06-23 at 7.44.01 PM (1).jpeg";
+import SplashScreen from "./components/SplashScreen";
+
 
 const roles = [
   {
@@ -274,7 +276,7 @@ function Hero() {
             >
               Alyssa
               <br />
-              <span style={{ color: "#D4175A" }}>Mae.</span>
+              <span style={{ color: "#D4175A", paddingLeft: "1.15em" }}>Mae</span>
             </h1>
 
             <p
@@ -288,7 +290,7 @@ function Hero() {
             >
               Brand designer, creative director, and founder of{" "}
               <a
-                href="https://juicegels.com"
+                href="https://juicegels.com/about"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline underline-offset-4 transition-colors hover:text-primary"
@@ -965,6 +967,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <SplashScreen />
       <Nav activeSection={activeSection} />
       <Hero />
       <Roles />
@@ -975,4 +978,3 @@ export default function App() {
     </div>
   );
 }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                    
