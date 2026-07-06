@@ -249,7 +249,7 @@ function Hero() {
                 className="text-xs tracking-[0.2em] uppercase"
                 style={{ fontFamily: "'DM Mono', monospace", color: "#D4175A" }}
               >
-                Portfolio 2025
+                Portfolio
               </span>
             </div>
 
@@ -290,27 +290,47 @@ function Hero() {
               . I build brands that stick and campaigns that move.
             </p>
 
-            <div className="flex flex-wrap gap-2 mt-1">
-              {["Brand Design", "Creative Direction", "Founder", "Content"].map((tag) => (
-                <span
-                  key={tag}
-                  className="text-xs px-4 py-2 rounded-full border"
+            <div className="flex items-center gap-3 mt-1">
+              {[
+                { icon: <Mail size={16} />, label: "Email", href: "mailto:hello@alyssamae.com", color: "#D4175A" },
+                { icon: <Instagram size={16} />, label: "Instagram", href: "https://instagram.com/juicegels", color: "#FF6B35" },
+                { icon: <Linkedin size={16} />, label: "LinkedIn", href: "https://linkedin.com/in/alyssamae", color: "#9B2D6F" },
+              ].map(({ icon, label, href, color }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="w-10 h-10 rounded-full flex items-center justify-center border transition-all duration-300 hover:scale-110"
                   style={{
-                    fontFamily: "'Jost', sans-serif",
-                    borderColor: "rgba(212,23,90,0.2)",
-                    color: "#9B2D6F",
-                    background: "rgba(212,23,90,0.05)",
-                    letterSpacing: "0.05em",
+                    borderColor: "rgba(24,10,16,0.1)",
+                    color: "#180A10",
+                    background: "transparent",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = color;
+                    e.currentTarget.style.color = "#FFFFFF";
+                    e.currentTarget.style.background = color;
+                    e.currentTarget.style.boxShadow = `0 4px 12px ${color}33`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = "rgba(24,10,16,0.1)";
+                    e.currentTarget.style.color = "#180A10";
+                    e.currentTarget.style.background = "transparent";
+                    e.currentTarget.style.boxShadow = "none";
                   }}
                 >
-                  {tag}
-                </span>
+                  {icon}
+                </a>
               ))}
             </div>
 
             <div className="flex items-center gap-5 mt-2">
               <a
-                href="#work"
+                href="/ALYSSACV.docx%20(3).pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm px-6 py-3 rounded-full transition-all duration-200 hover:opacity-85 hover:scale-[1.02]"
                 style={{
                   background: "#D4175A",
@@ -320,7 +340,7 @@ function Hero() {
                   letterSpacing: "0.04em",
                 }}
               >
-                View my work <ArrowUpRight size={14} />
+                View my CV <ArrowUpRight size={14} />
               </a>
               <a
                 href="#contact"
@@ -357,17 +377,6 @@ function Hero() {
             </div>
           </div>
         </div>
-
-        {/* Scroll cue */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-35">
-          <span
-            className="text-xs tracking-[0.2em] uppercase"
-            style={{ fontFamily: "'DM Mono', monospace", color: "#180A10" }}
-          >
-            Scroll
-          </span>
-          <ChevronDown size={15} className="animate-bounce" style={{ color: "#D4175A" }} />
-        </div>
       </div>
 
     </section>
@@ -376,10 +385,24 @@ function Hero() {
 
 /* ─── Roles ─── */
 function Roles() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
-    <section id="about" className="py-32 px-6 md:px-12" style={{ background: "#FFFFFF" }}>
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+    <section id="about" className="py-32 px-6 md:px-12 relative overflow-hidden" style={{ background: "#FFFFFF" }}>
+      {/* Dynamic Background Glow on Hover */}
+      <div
+        className="absolute inset-0 pointer-events-none transition-all duration-1000 ease-out"
+        style={{
+          background: hoveredIndex !== null
+            ? `radial-gradient(circle at 50% 50%, ${roles[hoveredIndex].color}08 0%, transparent 60%)`
+            : 'radial-gradient(circle at 50% 50%, transparent 0%, transparent 100%)',
+          opacity: hoveredIndex !== null ? 1 : 0
+        }}
+      />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section Header */}
+        <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
             <span
               className="text-xs tracking-[0.2em] uppercase block mb-4"
@@ -413,56 +436,171 @@ function Roles() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {roles.map((role, i) => (
-            <div
-              key={i}
-              className="group relative p-8 rounded-2xl border transition-all duration-300 cursor-default overflow-hidden hover:shadow-sm"
-              style={{
-                background: "#FBF4EF",
-                borderColor: "rgba(24,10,16,0.07)",
-              }}
-            >
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                style={{
-                  background: `radial-gradient(circle at 20% 50%, ${role.color}0D 0%, transparent 70%)`,
-                }}
-              />
-              <div className="relative flex flex-col gap-5">
-                <span className="text-2xl" style={{ color: role.color }}>{role.icon}</span>
-                <div>
-                  <h3
-                    className="text-xl mb-2"
-                    style={{ fontFamily: "'Gilda Display', serif", color: "#180A10" }}
-                  >
-                    {role.title}
-                  </h3>
-                  <p
-                    className="text-sm leading-relaxed"
-                    style={{
-                      fontFamily: "'Jost', sans-serif",
-                      fontWeight: 300,
-                      color: "rgba(24,10,16,0.55)",
-                    }}
-                  >
-                    {role.description}
-                  </p>
-                </div>
+        {/* Timeline Layout Container */}
+        <div className="relative">
+          {/* Vertical Timeline Line */}
+          <div
+            className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] -translate-x-[1px] pointer-events-none"
+            style={{
+              background: "linear-gradient(to bottom, transparent, rgba(24,10,16,0.1) 15%, rgba(24,10,16,0.1) 85%, transparent)"
+            }}
+          />
+
+          {/* Timeline Items */}
+          <div className="space-y-16 md:space-y-24">
+            {roles.map((role, i) => {
+              const isEven = i % 2 === 0;
+              const isHovered = hoveredIndex === i;
+
+              return (
                 <div
-                  className="flex items-center gap-1.5 text-xs font-medium opacity-0 group-hover:opacity-100 transition-all duration-300"
-                  style={{ color: role.color, fontFamily: "'Jost', sans-serif", letterSpacing: "0.05em" }}
+                  key={i}
+                  className={`relative flex flex-col md:flex-row items-start md:items-center ${isEven ? "md:flex-row-reverse" : ""
+                    }`}
+                  onMouseEnter={() => setHoveredIndex(i)}
+                  onMouseLeave={() => setHoveredIndex(null)}
                 >
-                  Explore <ArrowUpRight size={12} />
+                  {/* Card Side */}
+                  <div className="w-full md:w-1/2 pl-12 md:pl-0 md:px-12 flex flex-col justify-center relative">
+                    <div
+                      className={`group relative p-8 rounded-2xl border transition-all duration-500 cursor-default overflow-hidden ${isEven
+                          ? "md:text-right md:items-end md:ml-auto"
+                          : "md:text-left md:items-start md:mr-auto"
+                        } w-full max-w-xl`}
+                      style={{
+                        background: isHovered ? "#FFFFFF" : "#FBF4EF",
+                        borderColor: isHovered ? "rgba(24,10,16,0.12)" : "rgba(24,10,16,0.06)",
+                        boxShadow: isHovered
+                          ? `0 20px 40px -15px ${role.color}15, 0 1px 3px rgba(24,10,16,0.02)`
+                          : "none",
+                        transform: isHovered
+                          ? `translateY(-6px)`
+                          : "translateY(0)"
+                      }}
+                    >
+                      {/* Hover radial flare */}
+                      <div
+                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+                        style={{
+                          background: `radial-gradient(circle at ${isEven ? '80%' : '20%'} 50%, ${role.color}0A 0%, transparent 60%)`,
+                        }}
+                      />
+
+                      <div className="relative flex flex-col gap-4">
+                        {/* Mobile view top header (includes icon next to title) */}
+                        <div className="flex md:hidden items-center gap-3">
+                          <span
+                            className="text-lg w-8 h-8 rounded-full flex items-center justify-center border transition-all duration-300"
+                            style={{
+                              color: role.color,
+                              borderColor: `${role.color}33`,
+                              background: `${role.color}0D`
+                            }}
+                          >
+                            {role.icon}
+                          </span>
+                          <h3
+                            className="text-xl"
+                            style={{ fontFamily: "'Gilda Display', serif", color: "#180A10" }}
+                          >
+                            {role.title}
+                          </h3>
+                        </div>
+
+                        {/* Desktop View Title */}
+                        <h3
+                          className="hidden md:block text-2xl"
+                          style={{ fontFamily: "'Gilda Display', serif", color: "#180A10" }}
+                        >
+                          {role.title}
+                        </h3>
+
+                        <p
+                          className="text-sm md:text-base leading-relaxed"
+                          style={{
+                            fontFamily: "'Jost', sans-serif",
+                            fontWeight: 300,
+                            color: isHovered ? "rgba(24,10,16,0.75)" : "rgba(24,10,16,0.55)",
+                          }}
+                        >
+                          {role.description}
+                        </p>
+
+                        <div
+                          className={`flex items-center gap-1.5 text-xs font-medium transition-all duration-300 ${isEven ? "md:justify-end" : "md:justify-start"
+                            }`}
+                          style={{
+                            color: role.color,
+                            fontFamily: "'Jost', sans-serif",
+                            letterSpacing: "0.05em",
+                            opacity: isHovered ? 1 : 0,
+                            transform: isHovered ? "translateY(0)" : "translateY(4px)"
+                          }}
+                        >
+                          Explore <ArrowUpRight size={12} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Horizontal Connector Line (Desktop Only) */}
+                    {isEven ? (
+                      <div
+                        className="absolute right-0 top-1/2 -translate-y-1/2 h-[1px] w-12 hidden md:block transition-all duration-500"
+                        style={{ background: isHovered ? role.color : 'rgba(24,10,16,0.1)' }}
+                      />
+                    ) : (
+                      <div
+                        className="absolute left-0 top-1/2 -translate-y-1/2 h-[1px] w-12 hidden md:block transition-all duration-500"
+                        style={{ background: isHovered ? role.color : 'rgba(24,10,16,0.1)' }}
+                      />
+                    )}
+                  </div>
+
+                  {/* Central Node (Desktop) */}
+                  <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center justify-center z-20">
+                    <div
+                      className="w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-500"
+                      style={{
+                        background: isHovered ? role.color : "#FFFFFF",
+                        borderColor: isHovered ? role.color : "rgba(24,10,16,0.15)",
+                        color: isHovered ? "#FFFFFF" : "rgba(24,10,16,0.4)",
+                        boxShadow: isHovered
+                          ? `0 0 20px ${role.color}35, inset 0 0 0 2px rgba(255,255,255,0.2)`
+                          : "none",
+                        transform: isHovered ? "scale(1.15) rotate(15deg)" : "scale(1) rotate(0deg)"
+                      }}
+                    >
+                      <span className="text-lg font-medium">{role.icon}</span>
+                    </div>
+                  </div>
+
+                  {/* Mobile Node (Aligned on left timeline line) */}
+                  <div className="md:hidden absolute left-4 top-8 -translate-x-1/2 z-20">
+                    <div
+                      className="w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-500"
+                      style={{
+                        background: isHovered ? role.color : "#FFFFFF",
+                        borderColor: isHovered ? role.color : "rgba(24,10,16,0.15)",
+                        color: isHovered ? "#FFFFFF" : "rgba(24,10,16,0.4)",
+                        transform: isHovered ? "scale(1.1)" : "scale(1)"
+                      }}
+                    >
+                      <span className="text-xs">{role.icon}</span>
+                    </div>
+                  </div>
+
+                  {/* Empty Spacer Column (Desktop Only) */}
+                  <div className="hidden md:block w-1/2" />
                 </div>
-              </div>
-            </div>
-          ))}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
 
 /* ─── Case Studies ─── */
 function CaseStudies() {
