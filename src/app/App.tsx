@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ArrowUpRight, Mail, Instagram, Linkedin, ExternalLink, ChevronDown, Menu, X } from "lucide-react";
 import defaultPhoto from "../../assets/images/WhatsApp Image 2026-06-23 at 7.44.01 PM (1).jpeg";
+import jgCircleIcon from "../../assets/images/jg circle 2.png";
 import SplashScreen from "./components/SplashScreen";
 
 
@@ -42,6 +43,7 @@ const caseStudies = [
     image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=900&h=600&fit=crop&auto=format",
     tags: ["Branding", "E-commerce", "Packaging", "Community"],
     accent: "#D4175A",
+    logo: jgCircleIcon,
   },
   {
     title: "Nail Drop — Campaign Direction",
@@ -54,40 +56,19 @@ const caseStudies = [
     tags: ["Art Direction", "Campaign", "Photography"],
     accent: "#FF6B35",
   },
+  {
+    title: "Moisture Lux — Visual Flagship",
+    category: "Web Design · Product Identity · Art Direction",
+    year: "2024",
+    description:
+      "Designed the digital flagship and brand identity for Moisture Lux, a clean beauty skincare line. Focused on fluid layouts, high-end editorial typography, and sensory product storytelling that elevated digital conversion.",
+    metric: "+42% DTC conversion rate",
+    image: "https://images.unsplash.com/photo-1608248597481-496100c80836?w=900&h=600&fit=crop&auto=format",
+    tags: ["UI/UX Design", "Art Direction", "Skincare", "E-commerce"],
+    accent: "#9B2D6F",
+  },
 ];
 
-const projects = [
-  {
-    title: "JuiceGels.com",
-    type: "Website Design",
-    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=700&h=500&fit=crop&auto=format",
-  },
-  {
-    title: "Moisture Lux Collection",
-    type: "Packaging Design",
-    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=700&h=500&fit=crop&auto=format",
-  },
-  {
-    title: "Summer Drop Campaign",
-    type: "Art Direction",
-    image: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=700&h=500&fit=crop&auto=format",
-  },
-  {
-    title: "Nail Edit — Editorial",
-    type: "Editorial Design",
-    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=700&h=500&fit=crop&auto=format&hue=20",
-  },
-  {
-    title: "Brand Book 2024",
-    type: "Brand Guidelines",
-    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=700&h=500&fit=crop&auto=format",
-  },
-  {
-    title: "Founders Summit Talk",
-    type: "Speaking · Strategy",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&h=500&fit=crop&auto=format",
-  },
-];
 
 /* ─── Nav ─── */
 function Nav({ activeSection }: { activeSection: string }) {
@@ -96,7 +77,6 @@ function Nav({ activeSection }: { activeSection: string }) {
   const links = [
     { label: "About", id: "about" },
     { label: "Work", id: "work" },
-    { label: "Projects", id: "projects" },
     { label: "Contact", id: "contact" },
   ];
 
@@ -152,7 +132,7 @@ function Nav({ activeSection }: { activeSection: string }) {
         </ul>
 
         <a
-          href="mailto:hello@alyssamae.com"
+          href="mailto:hello@alyssamae.co.uk"
           className="hidden md:flex items-center gap-2 text-sm px-5 py-2.5 rounded-full transition-all duration-200 hover:opacity-85"
           style={{
             background: "#D4175A",
@@ -191,7 +171,7 @@ function Nav({ activeSection }: { activeSection: string }) {
             </a>
           ))}
           <a
-            href="mailto:hello@alyssamae.com"
+            href="mailto:hello@alyssamae.co.uk"
             className="flex items-center gap-2 text-sm font-medium px-5 py-2.5 rounded-full w-fit"
             style={{ background: "#D4175A", color: "#fff", fontFamily: "'Jost', sans-serif" }}
           >
@@ -292,9 +272,9 @@ function Hero() {
 
             <div className="flex items-center gap-3 mt-1">
               {[
-                { icon: <Mail size={16} />, label: "Email", href: "mailto:hello@alyssamae.com", color: "#D4175A" },
+                { icon: <Mail size={16} />, label: "Email", href: "mailto:hello@alyssamae.co.uk", color: "#D4175A" },
                 { icon: <Instagram size={16} />, label: "Instagram", href: "https://instagram.com/juicegels", color: "#FF6B35" },
-                { icon: <Linkedin size={16} />, label: "LinkedIn", href: "https://linkedin.com/in/alyssamae", color: "#9B2D6F" },
+                { icon: <Linkedin size={16} />, label: "LinkedIn", href: "https://www.linkedin.com/in/alyssa-mae-viernes-7b2862221/", color: "#9B2D6F" },
               ].map(({ icon, label, href, color }) => (
                 <a
                   key={label}
@@ -464,8 +444,8 @@ function Roles() {
                   <div className="w-full md:w-1/2 pl-12 md:pl-0 md:px-12 flex flex-col justify-center relative">
                     <div
                       className={`group relative p-8 rounded-2xl border transition-all duration-500 cursor-default overflow-hidden ${isEven
-                          ? "md:text-right md:items-end md:ml-auto"
-                          : "md:text-left md:items-start md:mr-auto"
+                        ? "md:text-right md:items-end md:ml-auto"
+                        : "md:text-left md:items-start md:mr-auto"
                         } w-full max-w-xl`}
                       style={{
                         background: isHovered ? "#FFFFFF" : "#FBF4EF",
@@ -838,16 +818,26 @@ function CaseStudies() {
                     </span>
                   </div>
 
-                  <h2
-                    className="leading-tight"
-                    style={{
-                      fontFamily: "'Gilda Display', serif",
-                      fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)",
-                      color: "#180A10",
-                    }}
-                  >
-                    {study.title}
-                  </h2>
+                  <div className="flex items-center gap-4">
+                    {study.logo && (
+                      <img
+                        src={study.logo}
+                        alt={`${study.title.split(' — ')[0]} logo`}
+                        className="w-12 h-12 rounded-full object-contain bg-white p-1 border flex-shrink-0"
+                        style={{ borderColor: "rgba(24,10,16,0.08)" }}
+                      />
+                    )}
+                    <h2
+                      className="leading-tight"
+                      style={{
+                        fontFamily: "'Gilda Display', serif",
+                        fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)",
+                        color: "#180A10",
+                      }}
+                    >
+                      {study.title}
+                    </h2>
+                  </div>
 
                   <div className="flex flex-wrap gap-2 mt-1">
                     {study.tags.map((tag) => (
@@ -943,109 +933,6 @@ function CaseStudies() {
   );
 }
 
-/* ─── Projects ─── */
-function Projects() {
-  const [hovered, setHovered] = useState<number | null>(null);
-
-  return (
-    <section id="projects" className="py-32 px-6 md:px-12" style={{ background: "#fff" }}>
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div>
-            <span
-              className="text-xs tracking-[0.2em] uppercase block mb-4"
-              style={{ fontFamily: "'DM Mono', monospace", color: "#9B2D6F" }}
-            >
-              Archive
-            </span>
-            <h2
-              className="leading-none"
-              style={{
-                fontFamily: "'Gilda Display', serif",
-                fontSize: "clamp(2.8rem, 6vw, 5rem)",
-                letterSpacing: "-0.01em",
-                color: "#180A10",
-              }}
-            >
-              Projects
-              <br />
-              <em>&amp; Work</em>
-            </h2>
-          </div>
-          <p
-            className="max-w-xs text-sm leading-relaxed"
-            style={{
-              fontFamily: "'Jost', sans-serif",
-              fontWeight: 300,
-              color: "rgba(24,10,16,0.5)",
-            }}
-          >
-            A selection of campaigns, products, and creative work from the last few years.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {projects.map((project, i) => (
-            <div
-              key={i}
-              className="group relative rounded-2xl overflow-hidden cursor-pointer border"
-              style={{
-                background: "#FBF4EF",
-                borderColor: "rgba(24,10,16,0.07)",
-              }}
-              onMouseEnter={() => setHovered(i)}
-              onMouseLeave={() => setHovered(null)}
-            >
-              <div className="relative h-52 overflow-hidden bg-muted">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div
-                  className="absolute inset-0 transition-opacity duration-300"
-                  style={{
-                    background: "linear-gradient(to bottom, transparent 40%, rgba(24,10,16,0.5) 100%)",
-                    opacity: hovered === i ? 1 : 0.4,
-                  }}
-                />
-              </div>
-              <div className="p-5 flex items-center justify-between">
-                <div>
-                  <p
-                    className="text-xs mb-1 tracking-[0.12em] uppercase transition-colors duration-200"
-                    style={{
-                      fontFamily: "'DM Mono', monospace",
-                      color: hovered === i ? "#D4175A" : "rgba(24,10,16,0.35)",
-                    }}
-                  >
-                    {project.type}
-                  </p>
-                  <h4
-                    className="text-base"
-                    style={{ fontFamily: "'Gilda Display', serif", color: "#180A10" }}
-                  >
-                    {project.title}
-                  </h4>
-                </div>
-                <div
-                  className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center border transition-all duration-200"
-                  style={{
-                    background: hovered === i ? "#D4175A" : "transparent",
-                    borderColor: hovered === i ? "#D4175A" : "rgba(212,23,90,0.2)",
-                    color: hovered === i ? "#fff" : "#D4175A",
-                  }}
-                >
-                  <ExternalLink size={13} />
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ─── Contact ─── */
 function Contact() {
@@ -1100,9 +987,9 @@ function Contact() {
 
             <div className="flex flex-col gap-3">
               {[
-                { icon: <Mail size={15} />, label: "hello@alyssamae.com", href: "mailto:hello@alyssamae.com", color: "#D4175A" },
-                { icon: <Instagram size={15} />, label: "@juicegels", href: "https://instagram.com/juicegels", color: "#FF6B35" },
-                { icon: <Linkedin size={15} />, label: "linkedin.com/in/alyssamae", href: "https://linkedin.com/in/alyssamae", color: "#9B2D6F" },
+                { icon: <Mail size={15} />, label: "hello@alyssamae.co.uk", href: "mailto:hello@alyssamae.co.uk", color: "#D4175A" },
+                { icon: <Instagram size={15} />, label: "@alyssa.vxo", href: "https://instagram.com/alyssa.vxo", color: "#FF6B35" },
+                { icon: <Linkedin size={15} />, label: "linkedin.com/in/alyssamae", href: "https://www.linkedin.com/in/alyssa-mae-viernes-7b2862221/", color: "#9B2D6F" },
               ].map(({ icon, label, href, color }) => (
                 <a
                   key={label}
@@ -1262,7 +1149,7 @@ export default function App() {
   const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
-    const sections = ["hero", "about", "work", "projects", "contact"];
+    const sections = ["hero", "about", "work", "contact"];
     const observers: IntersectionObserver[] = [];
 
     sections.forEach((id) => {
@@ -1286,7 +1173,6 @@ export default function App() {
       <Hero />
       <Roles />
       <CaseStudies />
-      <Projects />
       <Contact />
       <Footer />
     </div>
