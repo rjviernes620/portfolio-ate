@@ -14,6 +14,7 @@ import ghdCarousel4 from "../../../assets/images/ghd-carousel/4.jpeg";
 import ghdCarousel5 from "../../../assets/images/ghd-carousel/5.jpeg";
 import ghdCarousel6 from "../../../assets/images/ghd-carousel/6.jpeg";
 
+
 interface CaseStudy {
   title: string;
   category: string;
@@ -42,7 +43,7 @@ const caseStudies: CaseStudy[] = [
     logo: jgCircleIcon,
   },
   {
-    title: "Nail Drop — Campaign Direction",
+    title: "ghd - Placement Year",
     category: "Art Direction · Packaging · Campaign",
     year: "2023",
     description:
