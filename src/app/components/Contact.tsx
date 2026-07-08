@@ -53,7 +53,7 @@ export default function Contact() {
 
             <div className="flex flex-col gap-3">
               {[
-                { icon: <Mail size={15} />, label: "hello@alyssamae.co.uk", href: "mailto:hello@alyssamae.co.uk", color: "#D4175A" },
+                { icon: <Mail size={15} />, label: "AViernes101@gmail.com", href: "mailto:AViernes101@gmail.com", color: "#D4175A" },
                 { icon: <Instagram size={15} />, label: "@alyssa.vxo", href: "https://instagram.com/alyssa.vxo", color: "#FF6B35" },
                 { icon: <Linkedin size={15} />, label: "linkedin.com/in/alyssamae", href: "https://www.linkedin.com/in/alyssa-mae-viernes-7b2862221/", color: "#9B2D6F" },
               ].map(({ icon, label, href, color }) => (
