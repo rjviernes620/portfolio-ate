@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ArrowUpRight, X } from "lucide-react";
+import { ArrowUpRight, X, ChevronLeft, ChevronRight } from "lucide-react";
 import jgCircleIcon from "../../../assets/images/jg circle 2.png";
 import jgCarousel1 from "../../../assets/images/juicegels-carousel/WhatsApp Image 2026-07-07 at 8.55.34 AM.jpeg";
 import jgCarousel2 from "../../../assets/images/juicegels-carousel/2.jpeg";
@@ -339,14 +339,6 @@ export default function CaseStudies() {
   const study = caseStudies[active];
 
   useEffect(() => {
-    if (!isOverlayOpen || !study.carouselImages) return;
-    const interval = setInterval(() => {
-      setCarouselIndex((prev) => (prev + 1) % study.carouselImages!.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [isOverlayOpen, study.carouselImages]);
-
-  useEffect(() => {
     if (isOverlayOpen) {
       setCarouselIndex(0);
       document.body.style.overflow = "hidden";
@@ -555,19 +547,49 @@ export default function CaseStudies() {
             <div className="relative md:col-span-6 p-1 md:p-2 flex items-center justify-center bg-transparent">
               <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-lg border border-black/5 bg-muted">
                 {study.carouselImages ? (
-                  <div className="w-full h-full relative">
+                  <div className="w-full h-full relative group/carousel">
                     {study.carouselImages.map((imgSrc, idx) => (
                       <img
                         key={imgSrc}
                         src={imgSrc}
                         alt={`${study.title} carousel image ${idx + 1}`}
-                        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out"
+                        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
                         style={{
                           opacity: carouselIndex === idx ? 1 : 0,
                           zIndex: carouselIndex === idx ? 1 : 0,
                         }}
                       />
                     ))}
+
+                    {/* Navigation Arrows */}
+                    <button
+                      onClick={() => setCarouselIndex((prev) => (prev - 1 + study.carouselImages!.length) % study.carouselImages!.length)}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 z-30 flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-black/30 hover:bg-black/60 text-white backdrop-blur-sm transition-all duration-200 opacity-80 md:opacity-0 md:group-hover/carousel:opacity-100 cursor-pointer"
+                      aria-label="Previous image"
+                    >
+                      <ChevronLeft size={18} />
+                    </button>
+                    <button
+                      onClick={() => setCarouselIndex((prev) => (prev + 1) % study.carouselImages!.length)}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 z-30 flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-black/30 hover:bg-black/60 text-white backdrop-blur-sm transition-all duration-200 opacity-80 md:opacity-0 md:group-hover/carousel:opacity-100 cursor-pointer"
+                      aria-label="Next image"
+                    >
+                      <ChevronRight size={18} />
+                    </button>
+
+                    {/* Dot Indicators */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-1.5 bg-black/25 px-3 py-1.5 rounded-full backdrop-blur-sm">
+                      {study.carouselImages.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setCarouselIndex(idx)}
+                          className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                            carouselIndex === idx ? "bg-white scale-125" : "bg-white/40 hover:bg-white/70"
+                          }`}
+                          aria-label={`Go to slide ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
                   </div>
                 ) : (
                   <img

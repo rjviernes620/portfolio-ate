@@ -11,7 +11,7 @@ export default function App() {
   const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
-    const sections = ["hero", "about", "work", "contact"];
+    const sections = ["hero", "expertise", "work", "contact"];
     const observers: IntersectionObserver[] = [];
 
     sections.forEach((id) => {

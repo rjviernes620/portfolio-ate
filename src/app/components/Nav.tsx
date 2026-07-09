@@ -9,7 +9,8 @@ export default function Nav({ activeSection }: NavProps) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const links = [
-    { label: "About", id: "about" },
+    { label: "About", id: "hero" },
+    { label: "Expertise", id: "expertise" },
     { label: "Work", id: "work" },
     { label: "Contact", id: "contact" },
   ];
