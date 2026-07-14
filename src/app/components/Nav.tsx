@@ -38,7 +38,7 @@ export default function Nav({ activeSection }: NavProps) {
           className="font-normal tracking-wide text-foreground"
           style={{ fontFamily: "'Gilda Display', serif", fontSize: "1.15rem" }}
         >
-          Alyssa Mae
+          Alyssa Mae Viernes
         </a>
 
         <ul className="hidden md:flex items-center gap-8">
