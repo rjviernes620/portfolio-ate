@@ -5,7 +5,7 @@ export default function Contact() {
     <section id="contact" className="py-24 md:py-36 px-6 md:px-12 relative overflow-hidden" style={{ background: "#FBF4EF" }}>
       {/* Subtle decorative grid/glow elements for a premium feel */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(24,10,16,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(24,10,16,0.01)_1px,transparent_1px)] bg-[size:3rem_3rem] pointer-events-none opacity-40" />
-      
+
       <div className="max-w-4xl mx-auto relative z-10 text-center flex flex-col items-center">
         <div className="flex items-center gap-3 justify-center mb-6">
           <span className="w-8 h-px" style={{ background: "#D4175A" }} />
@@ -24,11 +24,10 @@ export default function Contact() {
             fontFamily: "'Gilda Display', serif",
             fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
             letterSpacing: "-0.01em",
-            color: "#180A10",
+            color: "#D4175A",
           }}
         >
-          Got a project? <br />
-          <em style={{ color: "#D4175A" }}>Let's talk.</em>
+          Let's talk.
         </h2>
 
         <p
@@ -39,7 +38,7 @@ export default function Contact() {
             color: "rgba(24,10,16,0.65)",
           }}
         >
-          Open to brand design projects, creative direction, speaking engagements, and founder collabs. Let's create something meaningful together.
+          Open to brand design projects, creative direction, speaking engagements, and founder collabs.
         </p>
 
         {/* Redesigned Premium Cards */}
@@ -54,13 +53,13 @@ export default function Contact() {
             }}
           >
             {/* Subtle card hover accent */}
-            <div 
+            <div
               className="absolute inset-0 pointer-events-none transition-all duration-300 opacity-0 group-hover:opacity-100"
               style={{
                 background: "radial-gradient(circle at 10% 10%, rgba(212, 23, 90, 0.04) 0%, transparent 70%)"
               }}
             />
-            
+
             <div className="flex justify-between items-start mb-6">
               <div
                 className="w-12 h-12 rounded-full flex items-center justify-center border transition-all duration-300 group-hover:scale-110"
@@ -72,13 +71,13 @@ export default function Contact() {
               >
                 <Mail size={20} />
               </div>
-              <ArrowUpRight 
-                size={18} 
+              <ArrowUpRight
+                size={18}
                 className="transition-transform duration-300 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1"
                 style={{ color: "#180A10" }}
               />
             </div>
-            
+
             <span
               className="text-xs uppercase tracking-wider block mb-1 font-medium"
               style={{ fontFamily: "'DM Mono', monospace", color: "rgba(24, 10, 16, 0.4)" }}
@@ -105,7 +104,7 @@ export default function Contact() {
             }}
           >
             {/* Subtle card hover accent */}
-            <div 
+            <div
               className="absolute inset-0 pointer-events-none transition-all duration-300 opacity-0 group-hover:opacity-100"
               style={{
                 background: "radial-gradient(circle at 10% 10%, rgba(155, 45, 111, 0.04) 0%, transparent 70%)"
@@ -123,8 +122,8 @@ export default function Contact() {
               >
                 <Linkedin size={20} />
               </div>
-              <ArrowUpRight 
-                size={18} 
+              <ArrowUpRight
+                size={18}
                 className="transition-transform duration-300 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1"
                 style={{ color: "#180A10" }}
               />
