@@ -45,164 +45,6 @@ interface CaseStudy {
 
 const caseStudies: CaseStudy[] = [
   {
-    title: "JuiceGels — Obsession to Reality",
-    category: "Brand Identity · Product Design · Founder",
-    year: "2022–Present",
-    description:
-      "Started with a concept for handmade press-on gel nails and built a full brand ecosystem — visual identity, packaging, DTC website, social presence, and a loyal community of 40K+.",
-    metric: "Over 100+ Nail styles",
-    image: jgSmallPhoto,
-    carouselImages: [jgCarousel1, jgCarousel2, jgCarousel3, jgCarousel4, jgCarousel5],
-    tags: ["Branding", "E-commerce", "Packaging", "Community"],
-    accent: "#D4175A",
-    logo: jgCircleIcon,
-    role: "Founder",
-    details: {
-      idea: (
-        <p>
-          Growing up as a nail biter, I often felt self-conscious about my hands and found traditional salon nails expensive,
-          time-consuming and impractical. I wanted a beauty solution that offered the confidence of salon-quality nails
-          without the long-term commitment, something wearable, reusable and expressive.
-          <br /><br />
-          What started as a personal solution quickly evolved into something much bigger.
-        </p>
-      ),
-      strategy: (
-        <div className="flex flex-col gap-4">
-          <p>
-            As both founder and marketer, I built every aspect of Juice Gels from the ground up, from the initial concept to a fully functioning direct-to-consumer business.
-          </p>
-          <p>
-            I developed the brand positioning, visual identity and customer experience, while managing product design, content creation, website development and day-to-day operations. Every decision was made with the intention of creating a recognisable brand rather than simply selling products.
-          </p>
-          <div className="mt-4">
-            <p className="font-semibold mb-2 text-[#D4175A]">
-              The strategy centred around three key principles:
-            </p>
-            <ul className="list-disc pl-5 space-y-3">
-              <li>
-                <strong>Brand before product:</strong> Creating a distinctive identity inspired by Y2K fashion, Korean beauty and internet culture, giving Juice Gels a recognisable personality across every customer touchpoint.
-              </li>
-              <li>
-                <strong>Content before advertising:</strong> Growing organically through storytelling, behind-the-scenes content and short-form video, allowing customers to connect with the journey behind the brand instead of relying on paid advertising.
-              </li>
-              <li>
-                <strong>Community before customers:</strong> Building meaningful relationships through authentic engagement, seasonal launches and interactive content that encourages customers to become part of the brand rather than simply purchase from it.
-              </li>
-            </ul>
-          </div>
-          <p className="mt-2">
-            This strategy shaped every stage of the customer journey, from discovering Juice Gels on social media to browsing the website, purchasing a set and becoming a returning customer.
-          </p>
-        </div>
-      ),
-      outcome: (
-        <div className="flex flex-col gap-4">
-          <p>
-            Today, Juice Gels has evolved from an idea into an independent beauty brand with a growing digital presence and a strong brand identity.
-          </p>
-          <div className="mt-2">
-            <p className="font-semibold mb-2 text-[#D4175A]">
-              Key milestones include:
-            </p>
-            <ul className="list-disc pl-5 space-y-2">
-              <li>Founded and launched an independent direct-to-consumer beauty brand</li>
-              <li>Developed the complete brand strategy, positioning and visual identity</li>
-              <li>Designed and launched a fully independent e-commerce website</li>
-              <li>Transitioned from Etsy to a standalone website and Instagram Shop</li>
-              <li>Produced multiple seasonal campaigns and product launches</li>
-              <li>Hosted the brand's first in-person pop-up event in London</li>
-              <li>Built an engaged online community through consistent organic content and storytelling</li>
-              <li>Applied academic research directly to real-world brand growth and strategic decision-making</li>
-            </ul>
-          </div>
-        </div>
-      )
-    }
-  },
-  {
-    title: "ghd — Placement Year",
-    category: "Global PR · Social Media · Campaign Execution",
-    year: "2024-2025",
-    description:
-      "Supporting the Global PR and Social Media teams with campaign execution, influencer relations, content production, and performance monitoring across multiple international markets.",
-    metric: "3× organic reach in 60 days",
-    image: ghdCarousel1,
-    carouselImages: [
-      ghdCarousel2,
-      ghdCarousel3,
-      ghdCarousel4,
-      ghdCarousel5,
-      ghdCarousel6,
-    ],
-    tags: ["Global PR", "Social Media", "Campaign Execution"],
-    accent: "#FF6B35",
-    logo: ghdLogo,
-    role: "Art Director",
-    details: {
-      idea: (
-        <p>
-          Joining ghd as its first Global PR & Social Media Intern gave me the opportunity to experience how one of the world's leading premium beauty brands builds global campaigns at scale.
-          <br /><br />
-          Unlike previous experiences where I worked closely with a single business, this role introduced me to global brand consistency, cross-functional collaboration and the level of detail required to manage campaigns across multiple international teams.
-        </p>
-      ),
-      strategy: (
-        <div className="flex flex-col gap-4">
-          <p>
-            Working alongside the Global PR and Social Media teams, I supported every stage of the campaign lifecycle—from early planning through to post-campaign reporting.
-          </p>
-          <div className="mt-4">
-            <p className="font-semibold mb-2 text-[#FF6B35]">
-              My work included:
-            </p>
-            <ul className="list-disc pl-5 space-y-4">
-              <li>
-                <strong>Global Product Launches:</strong> Supporting the delivery of international product launches by coordinating assets, managing gifting logistics and ensuring campaigns were prepared for global distribution.
-              </li>
-              <li>
-                <strong>Influencer & PR:</strong> Managing influencer and media send-outs, supporting VIP events and maintaining relationships with creators and press contacts while ensuring campaigns were executed to premium brand standards.
-              </li>
-              <li>
-                <strong>Social Media:</strong> Creating platform-native content inspired by emerging trends, assisting with social shoots, writing creative briefs and supporting content production for global social channels.
-              </li>
-              <li>
-                <strong>Performance & Insight:</strong> Monitoring campaign performance through Earned Media Value (EMV) reporting, competitor benchmarking and social listening, helping the team understand how campaigns performed across global markets and identify future opportunities.
-              </li>
-            </ul>
-          </div>
-        </div>
-      ),
-      outcome: (
-        <div className="flex flex-col gap-4">
-          <p>
-            My placement at ghd provided a behind-the-scenes understanding of how global beauty brands operate—from campaign planning and creative production to influencer marketing and performance measurement.
-          </p>
-          <div className="mt-4">
-            <p className="font-semibold mb-2 text-[#FF6B35]">
-              Key contributions included:
-            </p>
-            <ul className="list-disc pl-5 space-y-2">
-              <li>Supported multiple global product launch campaigns</li>
-              <li>Assisted with influencer and media gifting for international activations</li>
-              <li>Produced socially native content concepts for TikTok and Instagram</li>
-              <li>Contributed to global creative briefs and campaign planning</li>
-              <li>Reported on Earned Media Value (EMV) and competitor performance across global markets</li>
-              <li>Supported social-first campaign shoots and content production</li>
-              <li>Worked alongside cross-functional teams including PR, Social Media, Creative and Brand Marketing</li>
-            </ul>
-          </div>
-          <p className="mt-4 font-semibold text-[#FF6B35]">
-            More importantly, the experience shaped the way I approach marketing today.
-          </p>
-          <p>
-            Working inside a premium global brand taught me that great campaigns aren't built by one department alone—they're the result of strategy, creativity, data and collaboration working together. It strengthened my understanding of how storytelling, influencer marketing and performance insights can combine to create culturally relevant campaigns while maintaining a consistent global brand identity.
-          </p>
-        </div>
-      )
-    }
-  },
-  {
     title: "Synergy Exchange — Bridging Fintech with Marketing",
     category: "Marketing Management · Content Creation · Creative Direction",
     year: "2025 - Present",
@@ -325,6 +167,164 @@ const caseStudies: CaseStudy[] = [
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      )
+    }
+  },
+  {
+    title: "ghd — Placement Year",
+    category: "Global PR · Social Media · Campaign Execution",
+    year: "2024-2025",
+    description:
+      "Supporting the Global PR and Social Media teams with campaign execution, influencer relations, content production, and performance monitoring across multiple international markets.",
+    metric: "3× organic reach in 60 days",
+    image: ghdCarousel1,
+    carouselImages: [
+      ghdCarousel2,
+      ghdCarousel3,
+      ghdCarousel4,
+      ghdCarousel5,
+      ghdCarousel6,
+    ],
+    tags: ["Global PR", "Social Media", "Campaign Execution"],
+    accent: "#FF6B35",
+    logo: ghdLogo,
+    role: "Art Director",
+    details: {
+      idea: (
+        <p>
+          Joining ghd as its first Global PR & Social Media Intern gave me the opportunity to experience how one of the world's leading premium beauty brands builds global campaigns at scale.
+          <br /><br />
+          Unlike previous experiences where I worked closely with a single business, this role introduced me to global brand consistency, cross-functional collaboration and the level of detail required to manage campaigns across multiple international teams.
+        </p>
+      ),
+      strategy: (
+        <div className="flex flex-col gap-4">
+          <p>
+            Working alongside the Global PR and Social Media teams, I supported every stage of the campaign lifecycle—from early planning through to post-campaign reporting.
+          </p>
+          <div className="mt-4">
+            <p className="font-semibold mb-2 text-[#FF6B35]">
+              My work included:
+            </p>
+            <ul className="list-disc pl-5 space-y-4">
+              <li>
+                <strong>Global Product Launches:</strong> Supporting the delivery of international product launches by coordinating assets, managing gifting logistics and ensuring campaigns were prepared for global distribution.
+              </li>
+              <li>
+                <strong>Influencer & PR:</strong> Managing influencer and media send-outs, supporting VIP events and maintaining relationships with creators and press contacts while ensuring campaigns were executed to premium brand standards.
+              </li>
+              <li>
+                <strong>Social Media:</strong> Creating platform-native content inspired by emerging trends, assisting with social shoots, writing creative briefs and supporting content production for global social channels.
+              </li>
+              <li>
+                <strong>Performance & Insight:</strong> Monitoring campaign performance through Earned Media Value (EMV) reporting, competitor benchmarking and social listening, helping the team understand how campaigns performed across global markets and identify future opportunities.
+              </li>
+            </ul>
+          </div>
+        </div>
+      ),
+      outcome: (
+        <div className="flex flex-col gap-4">
+          <p>
+            My placement at ghd provided a behind-the-scenes understanding of how global beauty brands operate—from campaign planning and creative production to influencer marketing and performance measurement.
+          </p>
+          <div className="mt-4">
+            <p className="font-semibold mb-2 text-[#FF6B35]">
+              Key contributions included:
+            </p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Supported multiple global product launch campaigns</li>
+              <li>Assisted with influencer and media gifting for international activations</li>
+              <li>Produced socially native content concepts for TikTok and Instagram</li>
+              <li>Contributed to global creative briefs and campaign planning</li>
+              <li>Reported on Earned Media Value (EMV) and competitor performance across global markets</li>
+              <li>Supported social-first campaign shoots and content production</li>
+              <li>Worked alongside cross-functional teams including PR, Social Media, Creative and Brand Marketing</li>
+            </ul>
+          </div>
+          <p className="mt-4 font-semibold text-[#FF6B35]">
+            More importantly, the experience shaped the way I approach marketing today.
+          </p>
+          <p>
+            Working inside a premium global brand taught me that great campaigns aren't built by one department alone—they're the result of strategy, creativity, data and collaboration working together. It strengthened my understanding of how storytelling, influencer marketing and performance insights can combine to create culturally relevant campaigns while maintaining a consistent global brand identity.
+          </p>
+        </div>
+      )
+    }
+  },
+  {
+    title: "JuiceGels — Obsession to Reality",
+    category: "Brand Identity · Product Design · Founder",
+    year: "2022–Present",
+    description:
+      "Started with a concept for handmade press-on gel nails and built a full brand ecosystem — visual identity, packaging, DTC website, social presence, and a loyal community of 40K+.",
+    metric: "Over 100+ Nail styles",
+    image: jgSmallPhoto,
+    carouselImages: [jgCarousel1, jgCarousel2, jgCarousel3, jgCarousel4, jgCarousel5],
+    tags: ["Branding", "E-commerce", "Packaging", "Community"],
+    accent: "#D4175A",
+    logo: jgCircleIcon,
+    role: "Founder",
+    details: {
+      idea: (
+        <p>
+          Growing up as a nail biter, I often felt self-conscious about my hands and found traditional salon nails expensive,
+          time-consuming and impractical. I wanted a beauty solution that offered the confidence of salon-quality nails
+          without the long-term commitment, something wearable, reusable and expressive.
+          <br /><br />
+          What started as a personal solution quickly evolved into something much bigger.
+        </p>
+      ),
+      strategy: (
+        <div className="flex flex-col gap-4">
+          <p>
+            As both founder and marketer, I built every aspect of Juice Gels from the ground up, from the initial concept to a fully functioning direct-to-consumer business.
+          </p>
+          <p>
+            I developed the brand positioning, visual identity and customer experience, while managing product design, content creation, website development and day-to-day operations. Every decision was made with the intention of creating a recognisable brand rather than simply selling products.
+          </p>
+          <div className="mt-4">
+            <p className="font-semibold mb-2 text-[#D4175A]">
+              The strategy centred around three key principles:
+            </p>
+            <ul className="list-disc pl-5 space-y-3">
+              <li>
+                <strong>Brand before product:</strong> Creating a distinctive identity inspired by Y2K fashion, Korean beauty and internet culture, giving Juice Gels a recognisable personality across every customer touchpoint.
+              </li>
+              <li>
+                <strong>Content before advertising:</strong> Growing organically through storytelling, behind-the-scenes content and short-form video, allowing customers to connect with the journey behind the brand instead of relying on paid advertising.
+              </li>
+              <li>
+                <strong>Community before customers:</strong> Building meaningful relationships through authentic engagement, seasonal launches and interactive content that encourages customers to become part of the brand rather than simply purchase from it.
+              </li>
+            </ul>
+          </div>
+          <p className="mt-2">
+            This strategy shaped every stage of the customer journey, from discovering Juice Gels on social media to browsing the website, purchasing a set and becoming a returning customer.
+          </p>
+        </div>
+      ),
+      outcome: (
+        <div className="flex flex-col gap-4">
+          <p>
+            Today, Juice Gels has evolved from an idea into an independent beauty brand with a growing digital presence and a strong brand identity.
+          </p>
+          <div className="mt-2">
+            <p className="font-semibold mb-2 text-[#D4175A]">
+              Key milestones include:
+            </p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Founded and launched an independent direct-to-consumer beauty brand</li>
+              <li>Developed the complete brand strategy, positioning and visual identity</li>
+              <li>Designed and launched a fully independent e-commerce website</li>
+              <li>Transitioned from Etsy to a standalone website and Instagram Shop</li>
+              <li>Produced multiple seasonal campaigns and product launches</li>
+              <li>Hosted the brand's first in-person pop-up event in London</li>
+              <li>Built an engaged online community through consistent organic content and storytelling</li>
+              <li>Applied academic research directly to real-world brand growth and strategic decision-making</li>
+            </ul>
           </div>
         </div>
       )
