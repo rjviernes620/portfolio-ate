@@ -14,13 +14,13 @@ import ghdCarousel4 from "../../../assets/images/ghd-carousel/4.jpeg";
 import ghdCarousel5 from "../../../assets/images/ghd-carousel/5.jpeg";
 import ghdCarousel6 from "../../../assets/images/ghd-carousel/6.jpeg";
 import ghdLogo from "../../../assets/images/ghd-carousel/images.png";
-import synergyCarousel1 from "../../../assets/images/Synergy Carousel/1.jpeg";
-import synergyCarousel2 from "../../../assets/images/Synergy Carousel/2.jpeg";
-import synergyCarousel3 from "../../../assets/images/Synergy Carousel/3.jpeg";
-import synergyCarousel4 from "../../../assets/images/Synergy Carousel/4.jpeg";
-import synergyCarousel5 from "../../../assets/images/Synergy Carousel/5.jpeg";
-import synergySmallPhoto from "../../../assets/images/Synergy Carousel/6.jpeg";
-import synergyLogo from "../../../assets/images/Synergy Carousel/Synergy.jpeg";
+// import synergyCarousel1 from "../../../assets/images/Synergy Carousel/1.jpeg";
+// import synergyCarousel2 from "../../../assets/images/Synergy Carousel/2.jpeg";
+// import synergyCarousel3 from "../../../assets/images/Synergy Carousel/3.jpeg";
+// import synergyCarousel4 from "../../../assets/images/Synergy Carousel/4.jpeg";
+// import synergyCarousel5 from "../../../assets/images/Synergy Carousel/5.jpeg";
+// import synergySmallPhoto from "../../../assets/images/Synergy Carousel/6.jpeg";
+// import synergyLogo from "../../../assets/images/Synergy Carousel/Synergy.jpeg";
 
 
 interface CaseStudy {
@@ -44,6 +44,7 @@ interface CaseStudy {
 }
 
 const caseStudies: CaseStudy[] = [
+/*
   {
     title: "Synergy Exchange — Bridging Fintech with Marketing",
     category: "Marketing Management · Content Creation · Creative Direction",
@@ -172,6 +173,7 @@ const caseStudies: CaseStudy[] = [
       )
     }
   },
+*/
   {
     title: "ghd — Placement Year",
     category: "Global PR · Social Media · Campaign Execution",
